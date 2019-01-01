@@ -38,6 +38,54 @@ public long number6byte =  281474976710656L;
 public long number7byte =  72057594037927900L;
 ```
 
+4. benchmark
+```java
+TestData testData = new TestData();
+        
+testData.int1 = Integer.MAX_VALUE;
+testData.int2 = Integer.MIN_VALUE;
+testData.short1 = Short.MIN_VALUE;
+testData.short2 = Short.MAX_VALUE;
+testData.int1 = Integer.MIN_VALUE;
+testData.int2 = Integer.MAX_VALUE;
+testData.long1 = Long.MIN_VALUE;
+testData.long2 = Long.MAX_VALUE;
+
+testData.number3byte = 16777216;
+testData.number5byte = 4294967296L;
+testData.number6byte = 281474976710656L;
+testData.number7byte = 72057594037927900L;
+
+testData.tinyString = "It supports 256 bytes string";
+testData.string = "It supports 65,536 bytes string";
+testData.mediumString = "It supports 16,777,216 bytes string";
+
+//begin
+Gson gson = new Gson();
+
+long begin = System.currentTimeMillis();
+String json = null;
+TestData t = null;
+
+for(long i = 0; i < 1000000L; i++){
+    json = gson.toJson(testData);
+    t = gson.fromJson(json, TestData.class);
+}
+System.out.println("gson data size : " + json.getBytes().length + " bytes / speed(1,000,000 data) " + (System.currentTimeMillis() - begin) + "ms");
+
+
+begin = System.currentTimeMillis();
+byte[] rawBytes = JoDataSerializerUtil.serialize(testData);
+t = JoDataSerializerUtil.deserialize(rawBytes, TestData.class);
+for(long i = 0; i < 1000000L; i++){
+    rawBytes = JoDataSerializerUtil.serialize(testData);
+    t = JoDataSerializerUtil.deserialize(rawBytes, TestData.class);
+}
+
+System.out.println("jo data size : " + rawBytes.length + " bytes / speed(1,000,000 data) " + (System.currentTimeMillis() - begin) + "ms");
+
+
+```
 
 Remark
 - It only supports primitive type of Java now.
