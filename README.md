@@ -1,6 +1,8 @@
 Super light data serializer.
-It supports 3byte, 5byte, 6byte and 7byte decimal also.
 ============
+It supports 3byte, 5byte, 6byte and 7byte decimal also.
+Let's save your precious storage space!
+
 1. Serialize object to byte[]
 ```java
 byte[] rawBytes = JoDataSerializerUtil.serialize(data);
@@ -23,7 +25,7 @@ public long number6byte =  281474976710656L;
 
 @JoDataColumn(byteSize = 7)
 public long number7byte =  72057594037927900L;
-
+```java
 
 4. Performance result
 
@@ -103,7 +105,6 @@ public void test(){
     System.out.println("jo data size : " + rawBytes.length + " bytes / speed(1,000,000 data) " + (System.currentTimeMillis() - begin) + "ms");
 }
 ```
-
 Result ::
 GSON SERIALIZER RESULT
 gson data size : 335 bytes / It took (1,000,000 data) 6151ms
