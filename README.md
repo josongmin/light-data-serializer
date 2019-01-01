@@ -7,6 +7,7 @@ Let's save your precious storage space!
 ```java
 byte[] rawBytes = JoDataSerializerUtil.serialize(data);
 ```
+
 2. Unserialize byte[] to object 
 ```java
 MyData mydata = JoDataSerializerUtil.unserialize(rawBytes, MyData.class);
@@ -25,10 +26,9 @@ public long number6byte =  281474976710656L;
 
 @JoDataColumn(byteSize = 7)
 public long number7byte =  72057594037927900L;
-```java
+```
 
 4. Performance result
-
 Below is sample code for benchmarking
 ```java
 public class TestData {
