@@ -8,8 +8,8 @@ Compared with gson, It can reduce the data size by more than 4 times, and the sp
 
 
 Benchmark result of serizlizing and unserializing 1,000,000 data.
-- GSON : 335 bytes per object, It takes 6151ms
-- SUPER LIGHT DATA SERIALIZER : 96 bytes per object, It takes (1,000,000 data) 3265ms.
+- Gson : 335 bytes per object, It takes 6151ms
+- JoDataSerializerUtil : 96 bytes per object, It takes (1,000,000 data) 3265ms.
 
 
 Usage 
