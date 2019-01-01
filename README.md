@@ -4,7 +4,7 @@ Super light data serializer.
 It supports 3byte, 5byte, 6byte and 7byte decimal also.
 Let's save your precious storage space!
 
-Compared with gson, It can reduce the data size by more than 4 times, and the speed is more than 2 times faster.
+Compared with json type string(using gson), It can reduce the data size by more than 4 times, and the speed is more than 2 times faster.
 
 
 Benchmark result of serizlizing and unserializing 1,000,000 data.
