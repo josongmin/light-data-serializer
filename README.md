@@ -7,11 +7,6 @@ Let's save your precious storage space!
 Compared with json type string(using gson), It can reduce the data size by more than 4 times, and the speed is more than 2 times faster.
 
 
-Benchmark result of serizlizing and unserializing 1,000,000 data.
-- Gson : 335 bytes per object, It takes 6151ms
-- JoDataSerializerUtil : 96 bytes per object, It takes (1,000,000 data) 3265ms.
-
-
 Usage 
 1. Serialize object to byte[]
 ```java
@@ -86,6 +81,11 @@ System.out.println("jo data size : " + rawBytes.length + " bytes / speed(1,000,0
 
 
 ```
+
+Benchmark result of serizlizing and unserializing 1,000,000 data.
+- Gson : 335 bytes per object, It takes 6151ms
+- JoDataSerializerUtil : 96 bytes per object, It takes (1,000,000 data) 3265ms.
+
 
 Remark
 - It only supports primitive type of Java now.
