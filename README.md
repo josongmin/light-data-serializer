@@ -61,20 +61,7 @@ public class TestData {
 
     @JoDataColumn(textType = JoDataColumn.MEDIUMTEXT)
     public String mediumString = "asfasfasdfasdfasdf";
-
-
-    public String trace(){
-        return String.format(
-                "byte min : %d\n" + "byte max : %d\n"
-                        + "short min : %d\n" + "short max : %d\n"
-                        + "int min : %d\n" + "long max : %d\n"
-                        + "long min : %d\n" + "long max : %d\n"
-                        + "int 3byte : %d\n"
-                        + "long 5byte : %d\n"
-                        + "long 6byte : %d\n"
-                        + "long 7byte : %d\n"
-                        + "String : %s\n", byte1, byte2, short1, short2, int1, int2, long1, long2, number3byte, number5byte, number6byte, number7byte, string);
-    }
+    
 }
 
 
